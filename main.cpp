@@ -2,9 +2,13 @@
 #include <SFML/Graphics.hpp>
 
 int main() {
-    sf::RenderWindow window(sf::VideoMode(200, 200), "SFML works!");
-    sf::CircleShape shape(100.f);
-    shape.setFillColor(sf::Color::Green);
+    sf::RenderWindow window(sf::VideoMode(1920, 1080), "SFML works!");
+
+    sf::Texture map;
+    map.loadFromFile("images/map_main.jpg");
+    sf::Sprite map_spr;
+    map_spr.setTexture(map);
+    map_spr.setPosition(419,0);
 
     while (window.isOpen())
     {
@@ -16,7 +20,7 @@ int main() {
         }
 
         window.clear();
-        window.draw(shape);
+        window.draw(map_spr);
         window.display();
     }
 
